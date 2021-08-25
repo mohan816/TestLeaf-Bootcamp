@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<test thread-count="5" name="Test" verbose="2" parallel="classes">
+		<classes>
+			<class name="week1.venniala_scripts.CreateNewOpportunity"/>
+			<class name="week1.venniala_scripts.CreateAccounts"/>
+			<class name="week1.venniala_scripts.EditAccounts"/>
+			<class name="week1.venniala_scripts.DeleteAccount"/>
+			<class name="week1.venniala_scripts.EditOpportunity"/>
+			<class name="week1.venniala_scripts.RajVerifySort"/>
+			<class name="week1.venniala_scripts.SortByDate"/>
+			<class name="week1.venniala_scripts.SortOpportunites"/>
+			<class name="week1.venniala_scripts.SortWorkGroupName"/>
+			<class name="week1.venniala_scripts.VerifySorting"/>
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->
