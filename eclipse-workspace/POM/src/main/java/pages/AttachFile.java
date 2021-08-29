@@ -2,6 +2,7 @@ package pages;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 import java.util.Set;
 
 import org.openqa.selenium.By;
@@ -12,8 +13,9 @@ import base.BaseClass;
 public class AttachFile extends BaseClass {
 	
 	
-	public AttachFile(ChromeDriver driver) {
+	public AttachFile(ChromeDriver driver,Properties prop) {
 		this.driver=driver;
+		this.prop=prop;
 		}
 	Set<String> windows1=driver.getWindowHandles();
 	List<String> win1=new ArrayList<String>(windows1);
@@ -30,6 +32,6 @@ public class AttachFile extends BaseClass {
 	public EventPage clickDone() {
 		driver.findElement(By.xpath("//input[@name='cancel']")).click();
 		driver.switchTo().window(win1.get(0));
-		return new EventPage(driver);
+		return new EventPage(driver,prop);
 	}
 }

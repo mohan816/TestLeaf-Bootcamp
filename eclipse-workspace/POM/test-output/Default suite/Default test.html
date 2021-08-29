@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Aug 26 11:38:48 IST 2021</td>
+<td>Started on:</td><td>Sun Aug 29 15:49:45 IST 2021</td>
 </tr>
-<tr><td>Total time:</td><td>67 seconds (67525 ms)</td>
+<tr><td>Total time:</td><td>86 seconds (86386 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,14 +76,10 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='testcase.Assessment1.createAssessment()'><b>createAssessment</b><br>Test class: testcase.Assessment1<br>Parameters: Call/Email/Meeting, makaia@testleaf.com, SelBootcamp$123</td>
-<td><div><pre>java.lang.IndexOutOfBoundsException: Index -1 out of bounds for length 0
-	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64)
-	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70)
-	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:266)
-	at java.base/java.util.Objects.checkIndex(Objects.java:359)
-	at java.base/java.util.ArrayList.get(ArrayList.java:427)
-	at pages.HomePage.getAppAndDeveloperName(HomePage.java:41)
-	at testcase.Assessment1.createAssessment(Assessment1.java:17)
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.chrome.ChromeDriver.getWindowHandles()&quot; because &quot;this.driver&quot; is null
+	at pages.AttachFile.&lt;init&gt;(AttachFile.java:18)
+	at pages.EventPage.clickAttachFile(EventPage.java:43)
+	at testcase.Assessment1.createAssessment(Assessment1.java:18)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -112,15 +108,11 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1679401185", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1679401185'><pre>java.lang.IndexOutOfBoundsException: Index -1 out of bounds for length 0
-	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64)
-	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70)
-	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:266)
-	at java.base/java.util.Objects.checkIndex(Objects.java:359)
-	at java.base/java.util.ArrayList.get(ArrayList.java:427)
-	at pages.HomePage.getAppAndDeveloperName(HomePage.java:41)
-	at testcase.Assessment1.createAssessment(Assessment1.java:17)
+</pre></div><a href='#' onClick='toggleBox("stack-trace312629339", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace312629339'><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.chrome.ChromeDriver.getWindowHandles()&quot; because &quot;this.driver&quot; is null
+	at pages.AttachFile.&lt;init&gt;(AttachFile.java:18)
+	at pages.EventPage.clickAttachFile(EventPage.java:43)
+	at testcase.Assessment1.createAssessment(Assessment1.java:18)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -150,7 +142,7 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>59</td>
+<td>77</td>
 <td>testcase.Assessment1@73a1e9a9</td></tr>
 </table><p>
 </body>

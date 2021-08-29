@@ -1,4 +1,5 @@
 package pages;
+import java.util.Properties;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -8,21 +9,23 @@ import base.BaseClass;
 
 public class LoginPage extends BaseClass {
 	
-	public LoginPage(ChromeDriver driver) {
+	
+	public LoginPage(ChromeDriver driver,Properties prop) {
 		this.driver=driver;
+		this.prop=prop;
 	}
 	
 	public LoginPage enterUsername(String UserName) {
-		WebElement user=driver.findElementById("username");
+		WebElement user=driver.findElementById(prop.getProperty("LoginPage.Username.id"));
 		user.sendKeys(UserName, Keys.TAB);
 		return this;
 	}
 	public LoginPage enterPassword(String password) {
-		driver.findElementById("password").sendKeys(password);
+		driver.findElementById(prop.getProperty("LoginPage.Password.id")).sendKeys(password);
 		return this;
 	}
 	public SalesforceClassic clickLogin() {
-		driver.findElementById("Login").click();
+		driver.findElementById(prop.getProperty("LoginPage.Login.id")).click();
 		return new SalesforceClassic(driver);
 	}
 

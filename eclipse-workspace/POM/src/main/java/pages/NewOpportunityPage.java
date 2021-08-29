@@ -1,5 +1,7 @@
 package pages;
 
+import java.util.Properties;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -7,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import base.BaseClass;
 
 public class NewOpportunityPage extends BaseClass {
-	public NewOpportunityPage(ChromeDriver driver) {
+	public NewOpportunityPage(ChromeDriver driver,Properties prop) {
 		this.driver=driver;
 	}
 	

@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 import java.util.Set;
 
 import org.openqa.selenium.By;
@@ -15,8 +16,9 @@ import base.BaseClass;
 public class EventPage extends BaseClass {
 	public String uploadedFile;
 
-	public EventPage(ChromeDriver driver) {
+	public EventPage(ChromeDriver driver,Properties prop) {
 		this.driver=driver;
+		this.prop=prop;
 	}
 	public EventPage enterName(String name) {
 		driver.findElement(By.xpath("//input[@id='evt5']")).sendKeys(name);
@@ -40,7 +42,7 @@ public class EventPage extends BaseClass {
 	}
 	public AttachFile clickAttachFile() {
 		driver.findElement(By.xpath("//input[@value='Attach File']")).click();
-		return new AttachFile(driver);
+		return new AttachFile(driver,prop);
 	}
 	public EventPage getAttachmentText() {
 		uploadedFile=driver.findElement(By.xpath("(//span[@class='advisory'])[1]")).getText();

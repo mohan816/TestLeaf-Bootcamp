@@ -1,6 +1,7 @@
 package pages;
 
 import java.util.List;
+import java.util.Properties;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -9,8 +10,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import base.BaseClass;
 
 public class HomePage extends BaseClass{
-	public HomePage(ChromeDriver driver) {
+	public HomePage(ChromeDriver driver,Properties prop) {
 		this.driver=driver;
+		this.prop=prop;
 	}
 	
 	public HomePage clickAppLauncher() {
@@ -20,17 +22,17 @@ public class HomePage extends BaseClass{
 	public AppLauncherPage clickViewAll() {
 		WebElement viewAll=	driver.findElementByXPath("(//button[text()='View All'])");
 		viewAll.click();
-		return new AppLauncherPage(driver);
+		return new AppLauncherPage(driver,prop);
 	}
 	public OpportunityPage clickOpportunities() throws InterruptedException {
 		Thread.sleep(5000);
 		WebElement clickOpportunity=driver.findElement(By.xpath("//a[@title='Opportunities']"));
 		driver.executeScript("arguments[0].click()",clickOpportunity);
-		return new OpportunityPage(driver);
+		return new OpportunityPage(driver,prop);
 	}
 	public AccountPage clickAccounts() {
 		driver.findElement(By.xpath("//div[@role='list']/one-app-nav-bar-item-root[6]")).click();
-		return new AccountPage(driver);
+		return new AccountPage(driver,prop);
 	}
 	public HomePage clickCommunity() {
 		driver.findElement(By.xpath("//a[text()='Community']")).click();
@@ -60,7 +62,7 @@ public class HomePage extends BaseClass{
 	}
 	public SalesforceClassic clickSwitchToSalesforceClassic() {
 		driver.findElement(By.xpath("//a[text()='Switch to Salesforce Classic']")).click();
-		return new SalesforceClassic(driver);
+		return new SalesforceClassic(driver,prop);
 	}
 	
 

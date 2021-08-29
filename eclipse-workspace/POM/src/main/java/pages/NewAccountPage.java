@@ -1,5 +1,7 @@
 package pages;
 
+import java.util.Properties;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -7,8 +9,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import base.BaseClass;
 
 public class NewAccountPage extends BaseClass {
-	public NewAccountPage(ChromeDriver driver) {
+	public NewAccountPage(ChromeDriver driver,Properties prop) {
 		this.driver=driver;
+		this.prop=prop;
 	}
 	public NewAccountPage enterAccountName() {
 		driver.findElement(By.xpath("//input[@name='Name']")).sendKeys("Mohanrajan");
@@ -23,7 +26,7 @@ public class NewAccountPage extends BaseClass {
 	}
 	public AccountDetailsPage clickSave() {
 		driver.findElement(By.xpath("//button[@name='SaveEdit']")).click();
-		return new AccountDetailsPage(driver);
+		return new AccountDetailsPage(driver,prop);
 	}
 
 }

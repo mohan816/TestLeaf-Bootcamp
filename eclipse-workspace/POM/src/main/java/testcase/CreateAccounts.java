@@ -14,7 +14,7 @@ public class CreateAccounts extends BaseClass {
 	}
 	@Test(dataProvider="fetchData")
 	public void createAccounts(String username, String password, String name) {
-		LoginPage obj=new LoginPage(driver);
+		LoginPage obj=new LoginPage(driver,prop);
 		obj.enterUsername(username).enterPassword(password).clickLogin().clickLightningExperiene().navigateHomePage().clickAppLauncher().clickViewAll().clickAccounts().clickNew().enterAccountName().selectOwnership().clickSave().clickDetails().verifyAccountName(name);
 		
 

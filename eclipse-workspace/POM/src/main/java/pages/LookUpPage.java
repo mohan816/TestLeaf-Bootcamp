@@ -2,6 +2,7 @@ package pages;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 import java.util.Set;
 
 import org.openqa.selenium.By;
@@ -11,8 +12,10 @@ import base.BaseClass;
 
 public class LookUpPage extends BaseClass {
 	
-	public LookUpPage(ChromeDriver driver) {
+	public LookUpPage(ChromeDriver driver,Properties prop) {
 		this.driver=driver;	
+		this.prop=prop;
+		
 	}
 	
 	Set<String> windows;
@@ -32,7 +35,7 @@ public class LookUpPage extends BaseClass {
 		driver.switchTo().frame("resultsFrame");
 		driver.findElement(By.xpath("//th[@scope='row']/a")).click();
 		driver.switchTo().window(win.get(0));
-		return new EventPage(driver);
+		return new EventPage(driver,prop);
 	}
 
 }

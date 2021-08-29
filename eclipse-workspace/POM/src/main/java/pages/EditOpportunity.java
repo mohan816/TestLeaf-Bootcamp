@@ -1,5 +1,7 @@
 package pages;
 
+import java.util.Properties;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -8,8 +10,9 @@ import base.BaseClass;
 
 public class EditOpportunity extends BaseClass {
 	
-	public EditOpportunity(ChromeDriver driver) {
+	public EditOpportunity(ChromeDriver driver,Properties prop) {
 		this.driver=driver;
+		this.prop=prop;
 	}
 	
 	public EditOpportunity enterCloseDate(String Date) {
@@ -39,7 +42,7 @@ public class EditOpportunity extends BaseClass {
 	}
 	public OpportunityPage clickSave() {
 		driver.findElement(By.xpath("//button[@name='SaveEdit']")).click();
-		return new OpportunityPage(driver);
+		return new OpportunityPage(driver,prop);
 	}
 
 }

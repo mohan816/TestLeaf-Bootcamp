@@ -1,5 +1,7 @@
 package pages;
 
+import java.util.Properties;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -8,8 +10,9 @@ import base.BaseClass;
 
 public class EditAccountPage extends BaseClass {
 	
-	public EditAccountPage(ChromeDriver driver) {
+	public EditAccountPage(ChromeDriver driver,Properties prop) {
 		this.driver=driver;
+		this.prop=prop;
 	}
 	public EditAccountPage selectTypeDroplist() throws InterruptedException {
 	driver.findElement(By.xpath("(//label[text()='Type']/following::div[@role='none'])[1]")).click();
@@ -70,7 +73,7 @@ public class EditAccountPage extends BaseClass {
 	public AccountPage clickSave() throws InterruptedException {
 		driver.findElement(By.xpath("//button[@name='SaveEdit']")).click();
 		Thread.sleep(5000);
-		return new AccountPage(driver);
+		return new AccountPage(driver,prop);
 		
 		
 	}

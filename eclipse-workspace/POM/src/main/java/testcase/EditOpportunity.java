@@ -13,7 +13,7 @@ public class EditOpportunity extends BaseClass {
 	}
 	@Test(dataProvider="fetchData")
 	public void EditOpportunity(String username, String Password, String textbox, String dropList, String date) throws InterruptedException {
-		new LoginPage(driver).enterUsername(username).enterPassword(Password).clickLogin().clickLightningExperiene().navigateHomePage().clickAppLauncher().clickViewAll().clickSales().clickOpportunities().
+		new LoginPage(driver,prop).enterUsername(username).enterPassword(Password).clickLogin().clickLightningExperiene().navigateHomePage().clickAppLauncher().clickViewAll().clickSales().clickOpportunities().
 		enterValueInSerachTextBox(textbox).clickEdit().clickStage().enterCloseDate(date).enterDescription().clickSave().clickOpportunityName(textbox)
 		.clickDetails().verifyOpportunityIsEdited(dropList);
 		

@@ -13,7 +13,7 @@ public class DeleteAccount extends BaseClass {
 	}
 	@Test(dataProvider="fetchData")
 	public void deleteAccount(String username, String Password) throws InterruptedException {
-		new LoginPage(driver).enterUsername(username).enterPassword(Password).clickLogin().clickLightningExperiene().navigateHomePage().clickAppLauncher().
+		new LoginPage(driver,prop).enterUsername(username).enterPassword(Password).clickLogin().clickLightningExperiene().navigateHomePage().clickAppLauncher().
 		clickViewAll().clickAccounts().searchTextBox().clickDropListAccountName().clickDelete();
 	}
 

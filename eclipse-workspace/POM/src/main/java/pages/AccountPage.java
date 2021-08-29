@@ -1,5 +1,7 @@
 package pages;
 
+import java.util.Properties;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -8,8 +10,9 @@ import base.BaseClass;
 
 public class AccountPage extends BaseClass {
 	
-	public AccountPage(ChromeDriver driver) {
+	public AccountPage(ChromeDriver driver,Properties prop) {
 		this.driver=driver;
+		this.prop=prop;
 	}
 	
 	public NewAccountPage clickNew() {
@@ -23,7 +26,7 @@ public class AccountPage extends BaseClass {
 	}
 	public AccountDetailsPage clickAccountName() {
 		driver.findElement(By.xpath("(//a[@title='Mohanrajan'])[1]")).click();
-		return new AccountDetailsPage(driver);
+		return new AccountDetailsPage(driver,prop);
 	}
 	public AccountPage clickDropListAccountName() {
 		driver.findElement(By.xpath("(//div[@data-aura-class='forceVirtualAction'])[1]")).click();
@@ -31,7 +34,7 @@ public class AccountPage extends BaseClass {
 	}
 	public EditAccountPage clickEdit() {
 		driver.findElement(By.xpath("//a[@title='Edit']")).click();
-		return new EditAccountPage(driver);
+		return new EditAccountPage(driver,prop);
 	}
 	public AccountPage clickDelete() {
 		driver.findElement(By.xpath("//a[@title='Delete']")).click();

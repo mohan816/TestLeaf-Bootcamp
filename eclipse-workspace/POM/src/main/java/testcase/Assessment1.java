@@ -13,7 +13,7 @@ public class Assessment1 extends BaseClass{
 	}
 	@Test(dataProvider="fetchData")
 	public void createAssessment(String Subject, String username, String password) {
-		new LoginPage(driver).enterUsername(username).enterPassword(password).clickLogin().clickLightningExperiene().navigateHomePage()
+		new LoginPage(driver,prop).enterUsername(username).enterPassword(password).clickLogin().clickLightningExperiene().navigateHomePage()
 		.clickCommunity().getAppAndDeveloperName().clickViewProfile().clickSwitchToSalesforceClassic().clickCreateNew().clickEvent()
 		.enterName(Subject).enetrStart().enterEnd().clickLookUp().enterValueInSearch().clickSearchResults().clickAttachFile()
 		.selectFile().clickAttachFileButton().clickDone().getAttachmentText().verifyFileName().clickSave();

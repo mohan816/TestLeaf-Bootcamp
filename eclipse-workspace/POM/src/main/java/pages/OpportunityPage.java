@@ -1,5 +1,7 @@
 package pages;
 
+import java.util.Properties;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -9,14 +11,15 @@ import org.openqa.selenium.interactions.Actions;
 import base.BaseClass;
 
 public class OpportunityPage extends BaseClass{
-	public OpportunityPage(ChromeDriver driver) {
+	public OpportunityPage(ChromeDriver driver,Properties prop) {
 		this.driver=driver;
+		this.prop=prop;
 	}
 
 	
 	public NewOpportunityPage clickNew() {
 		driver.findElement(By.xpath("//div[text()='New']")).click();
-		return new NewOpportunityPage(driver);
+		return new NewOpportunityPage(driver,prop);
 	}
 	public OpportunityPage enterValueInSerachTextBox(String textbox) throws InterruptedException {
 		driver.findElement(By.xpath("//input[@name='Opportunity-search-input']")).sendKeys(textbox,Keys.ENTER);
@@ -32,7 +35,7 @@ public class OpportunityPage extends BaseClass{
 		Thread.sleep(10000);
 		WebElement clickEdit=driver.findElement(By.xpath("//a[@title='Edit']/div"));
 		driver.executeScript("arguments[0].click()", clickEdit);
-		return new EditOpportunity(driver);
+		return new EditOpportunity(driver,prop);
 	}
 	
 	public OpportunityPage verifySuccessMessage(String textbox) throws InterruptedException {
